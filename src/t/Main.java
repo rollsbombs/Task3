@@ -1,3 +1,5 @@
+package t;
+
 import java.util.Random;
 import java.util.Arrays;
 import java.util.Map;
@@ -21,7 +23,7 @@ public class Main {
             if (entry.getValue() > 1) {
                 int count = entry.getValue();
                 String times = (count % 10 == 1 && count % 100 != 11) ? "раз" : "раза";
-                System.out.printf("Число '%d' встречается %d %S%n", entry.getKey(), entry.getValue());
+                System.out.printf("Число '%d' встречается %d %s%n", entry.getKey(), count, times);
                 foundDup = true;
             }
         }
