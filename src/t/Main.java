@@ -22,7 +22,14 @@ public class Main {
         for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
             if (entry.getValue() > 1) {
                 int count = entry.getValue();
-                String times = (count % 10 == 1 && count % 100 != 11) ? "раз" : "раза";
+                String times;
+                if (count % 10 == 1 && count % 100 != 11) {
+                    times = "раз";
+                } else if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 >= 20)) {
+                    times = "раза";
+                } else {
+                    times = "раз";
+                }
                 System.out.printf("Число '%d' встречается %d %s%n", entry.getKey(), count, times);
                 foundDup = true;
             }
